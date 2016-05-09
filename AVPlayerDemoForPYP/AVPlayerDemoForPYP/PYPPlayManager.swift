@@ -118,8 +118,6 @@ class PYPPlayManager: NSObject {
         
        timeObserverToken = player.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1), queue: nil) {
             [unowned self] time -> Void  in
-
-//             计算当前在第几秒
         
             let t1 = self.player.currentItem!.currentTime().value
             let t2 = self.player.currentItem!.currentTime().timescale
@@ -143,15 +141,15 @@ class PYPPlayManager: NSObject {
             if self.player.currentItem?.status == .ReadyToPlay {
                 
                 let duration = self.player.currentItem!.duration
-                // 转换成秒
+                
                 
                 let totalSecond = Float(self.player.currentItem!.duration.value) / Float(self.player.currentItem!.duration.timescale)
-                // 转换成播放时间
+                
                 self.totalTime = self.convertTime(totalSecond)
-                // 自定义UISlider外观
+                
                 
                 customVideoSlide(duration)
-                // 监听播放状态
+                
                 monitoringPlayback()
                 
             }
