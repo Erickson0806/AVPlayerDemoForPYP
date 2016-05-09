@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUx-aD-V0e">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2Vv-eV-PCI">
+            <objects>
+                <navigationController id="lUx-aD-V0e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mdZ-SN-1vi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kyz-UP-fXR" kind="relationship" relationship="rootViewController" id="bfg-JH-HM2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWx-SM-3VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-842" y="250"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="DVP-V9-dO5">
+            <objects>
+                <viewController id="Kyz-UP-fXR" customClass="RootViewController" customModule="AVPlayerDemoForPYP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsA-mm-BH4"/>
+                        <viewControllerLayoutGuide type="bottom" id="wap-gC-okg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L9m-dM-rVy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dDD-Ss-Lrq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7p-qZ-vU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="206"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="AVPlayerDemoForPYP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sri-xY-4aF" customClass="PlayerView" customModule="AVPlayerDemoForPYP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-zb-NLl">
+                                        <rect key="frame" x="18" y="270" width="564" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KSs-tB-8o2"/>
+                                        </constraints>
+                                        <color key="thumbTintColor" red="0.95686274509803904" green="0.26428865131578949" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="slideValueChangeEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZdH-2u-nfH"/>
+                                            <action selector="slideValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="raw-uI-BP4"/>
+                                        </connections>
+                                    </slider>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GYe-VU-zpd">
+                                        <rect key="frame" x="20" y="258" width="560" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Fji-MY-GIA"/>
+                                        </constraints>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="g1v-zb-NLl" secondAttribute="trailing" constant="20" id="8ke-xW-rrt"/>
+                                    <constraint firstItem="g1v-zb-NLl" firstAttribute="leading" secondItem="Sri-xY-4aF" secondAttribute="leading" constant="20" id="DfK-KA-ecl"/>
+                                    <constraint firstItem="g1v-zb-NLl" firstAttribute="top" secondItem="GYe-VU-zpd" secondAttribute="bottom" constant="10" id="KQ7-Hg-XAM"/>
+                                    <constraint firstAttribute="trailing" secondItem="GYe-VU-zpd" secondAttribute="trailing" constant="20" id="XBn-bU-Yoh"/>
+                                    <constraint firstAttribute="bottom" secondItem="g1v-zb-NLl" secondAttribute="bottom" id="Yjc-kE-iS7"/>
+                                    <constraint firstAttribute="height" constant="300" id="dRj-Q9-RqP"/>
+                                    <constraint firstAttribute="width" secondItem="Sri-xY-4aF" secondAttribute="height" multiplier="16:9" priority="750" id="ffK-sc-hP4"/>
+                                    <constraint firstItem="GYe-VU-zpd" firstAttribute="leading" secondItem="Sri-xY-4aF" secondAttribute="leading" constant="20" id="jrP-va-w52"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sri-xY-4aF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8MF-Rm-Hha"/>
+                            <constraint firstItem="Sri-xY-4aF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dcb-uD-zzF"/>
+                            <constraint firstAttribute="trailing" secondItem="Sri-xY-4aF" secondAttribute="trailing" id="kJO-Qk-obq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playLayerView" destination="Sri-xY-4aF" id="tyn-rL-EOT"/>
+                        <outlet property="pregressView" destination="GYe-VU-zpd" id="TBj-DD-XeI"/>
+                        <outlet property="slideView" destination="g1v-zb-NLl" id="Yve-tP-45b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="227"/>
+        </scene>
+    </scenes>
+</document>
